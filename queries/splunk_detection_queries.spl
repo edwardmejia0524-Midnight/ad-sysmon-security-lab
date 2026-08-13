@@ -1,0 +1,19 @@
+[Splunk Detection Queries - AD & Sysmon Lab]
+
+---
+### 1. Detect Suspicious PowerShell Execution (Event ID 1)
+index=sysmon EventCode=1 
+| search Image="*\\powershell.exe" CommandLine="*-enc*" OR CommandLine="*DownloadString*"
+| table _time ComputerName User Image CommandLine ParentImage
+
+---
+### 2. Detect Potential Kerberoasting (Active Directory Event ID 4769)
+index=wineventlog EventCode=4769 ServiceName!="*$" TicketEncryptionType=0x17
+| stats count by AccountName ClientAddress ServiceName
+| sort - count
+
+---
+### 3. Detect LSASS Process Access / Credential Dumping (Sysmon Event ID 10)
+index=sysmon EventCode=10 TargetImage="*\\lsass.exe" 
+| stats count by ComputerName SourceImage GrantedAccess
+| sort - count
