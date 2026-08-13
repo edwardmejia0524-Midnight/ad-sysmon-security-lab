@@ -1,0 +1,24 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <!-- Event ID 1: Process Creation -->
+    <ProcessCreate onmatch="include">
+      <Rule groupName="Execution" condition="is">
+        <Image condition="end with">powershell.exe</Image>
+        <Image condition="end with">cmd.exe</Image>
+        <Image condition="end with">lsass.exe</Image>
+        <Image condition="end with">whoami.exe</Image>
+      </Rule>
+    </ProcessCreate>
+
+    <!-- Event ID 3: Network Connection -->
+    <NetworkConnect onmatch="exclude">
+      <Image condition="end with">C:\Program Files\Google\Chrome\Application\chrome.exe</Image>
+    </NetworkConnect>
+
+    <!-- Event ID 10: ProcessAccess (LSASS Dumping) -->
+    <ProcessAccess onmatch="include">
+      <TargetImage condition="end with">lsass.exe</TargetImage>
+    </ProcessAccess>
+  </EventFiltering>
+</Sysmon>
