@@ -139,4 +139,4 @@ git push -u origin main
 | `playbooks/` | Step-by-step incident response and simulation runbooks. |
 | `queries/` | Reusable Search Processing Language (`.spl`) files. |
 | `scripts/` | PowerShell helper scripts for testing and telemetry validation. |
-Displaying README_1.md.
+Displaying README.md.
