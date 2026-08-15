@@ -1,11 +1,3 @@
-
-README_1.md
-
-Page
-1
-/
-1
-100%
 # Active Directory Attack Simulation & Sysmon Telemetry Lab
 
 ## 1. Lab Overview & Architecture
