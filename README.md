@@ -123,3 +123,4 @@ The terminal output below confirms successful Sysmon service validation, event l
 | `queries/` | Reusable Search Processing Language detection files (`security_detections.spl`). |
 | `scripts/` | PowerShell helper scripts for testing and telemetry validation. |
 | `README.md` | Comprehensive technical project documentation. |
+EOf
