@@ -111,7 +111,7 @@ A production-grade correlation search was configured within Splunk Enterprise to
 
 The terminal output below confirms successful Sysmon service validation, event log forwarding status, and detection query execution within the lab environment:
 
-![Execution Screenshot](assets/execution.png)
+![Execution Screenshot]
 
 ## 7. File & Directory Descriptions
 
